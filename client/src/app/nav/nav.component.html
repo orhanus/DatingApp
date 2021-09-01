@@ -23,7 +23,8 @@
             </ul>
 
             <div class="dropdown" *ngIf="((accountService.currentUser$ | async) | json) != '{}'" dropdown>
-                <a class="dropdown-toggle text-ligth" dropdownToggle>
+                <img src="{{(accountService.currentUser$ | async).photoUrl}}" alt="{{(accountService.currentUser$ | async).username}}">
+                <a class="dropdown-toggle text-ligth ml-2" dropdownToggle>
                     Welcome {{getUserFromLocalStorage() | titlecase}}
                 </a>
                 <div class="dropdown-menu mt-3" *dropdownMenu>
