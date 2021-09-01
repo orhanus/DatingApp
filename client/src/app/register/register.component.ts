@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Self } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
@@ -50,6 +50,10 @@ export class RegisterComponent implements OnInit {
 
   cancel() { 
     this.cancelRegister.emit(false);
+  }
+
+  get formControl(): FormControl {
+    return this.formControl;
   }
 
 }
